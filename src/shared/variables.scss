@@ -1,0 +1,57 @@
+// Variables for the margin en width device
+$max-section-width: 1000px;
+$section-width-mobile: 90%;
+$max-section-height: 650px;
+$section-width: 100%;
+$margin-section: 5vh;
+//Colors
+$elements-colors: purple;
+
+/* Breakpoints */
+$small: 440px;
+$s-medium: 570px;
+$medium: 761px;
+$large: 960px;
+$x-large: 1024px;
+$high-quality: 1700px;
+
+//Funcion para el color del fondo
+@function backgroundSection($className) {
+  @if $className == "fire" {
+    @return radial-gradient(
+      circle,
+      rgba(255, 131, 0, 1) 19%,
+      rgba(255, 0, 0, 1) 91%
+    );
+  } @else if $className == "water" {
+    @return radial-gradient(
+      circle,
+      rgba(5, 165, 181, 1) 49%,
+      rgba(0, 116, 255, 1) 78%
+    );
+  } @else if $className == "ground" {
+    @return radial-gradient(
+      circle,
+      rgba(181, 76, 5, 1) 51%,
+      rgba(125, 50, 16, 1) 78%
+    );
+  } @else if $className == "legendary" {
+    @return radial-gradient(
+      circle,
+      rgba(215, 255, 0, 1) 28%,
+      rgba(7, 184, 0, 1) 82%
+    );
+  }@else {
+    @return radial-gradient(
+      circle,
+      rgba(5, 165, 181, 1) 49%,
+      rgba(0, 116, 255, 1) 78%
+    ); 
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}

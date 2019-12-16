@@ -1,0 +1,139 @@
+@import "../../shared/variables.scss";
+@import "../../shared/mixins.scss";
+
+body {
+  background: #f1f1f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokemonContainer {
+  background: backgroundSection("cualquiera");
+
+  &.fire {
+    background: backgroundSection("fire");
+  }
+  &.water {
+    background: backgroundSection("water");
+  }
+  &.ground {
+    background: backgroundSection("ground");
+  }
+  &.legendary {
+    background: backgroundSection("legendary");
+  }
+
+  margin: 0 auto;
+  padding: 30px;
+  max-height: $max-section-height;
+  width: $section-width;
+  max-width: $max-section-width;
+  display: flex;
+  @include from($x-large) {
+    padding: 0px;
+    max-height: 2000px;
+    width: $section-width-mobile;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imageContainer {
+    width: 50%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include from($x-large) {
+      margin: 0;
+      justify-content: center;
+      width: 100%;
+      z-index: 2;
+    }
+
+    & .pokemonTitle {
+      margin: 20px auto;
+      border-radius: 15px;
+      width: 80%;
+      height: 60px;
+      background: $elements-colors;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: white;
+      font-size: 1.25rem;
+      @include from($x-large) {
+        padding-left: 0;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    & img {
+      margin: 0;
+      max-height: 80%;
+      width: 80%;
+    }
+  }
+
+  aside {
+    width: 50%;
+    @include from($x-large) {
+      width: 100%;
+    }
+    .detailsContainer {
+      margin: 0 auto;
+      width: 80%;
+      height: 100%;
+      border-radius: 20px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      background: white;
+      @include from($x-large) {
+        z-index: 1;
+        margin-top: -70px;
+        margin-bottom: 30px;
+        padding: 40px 0;
+      }
+
+      span {
+        width: 50%;
+        height: auto;
+        word-wrap: break-word;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        @include from($x-large) {
+          flex-direction: row;
+          justify-content: space-around;
+          width: 100%;
+          margin: 15px 0;
+        }
+
+        p {
+          margin: 0;
+          text-align: center;
+          @include from($x-large) {
+            font-size: 1rem;
+          }
+        }
+
+        mark {
+          height: auto;
+          max-width: 100%;
+          word-wrap: break-word;
+          background: none;
+          font-weight: bold;
+          font-size: 1.5rem;
+          text-align: center;
+
+          @include from($x-large) {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

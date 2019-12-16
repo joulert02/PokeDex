@@ -1,0 +1,98 @@
+@import "../../shared/variables.scss";
+@import "../../shared/mixins.scss";
+
+footer {
+  width: 100%;
+  height: auto;
+  margin-bottom: $margin-section;
+
+  .footerContianer {
+    height: 100%;
+    margin: 0 auto;
+    background: $elements-colors;
+    width: $section-width;
+    max-width: $max-section-width;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    @include from($x-large) {
+      padding: 20px 0;
+      flex-direction: column;
+      width: $section-width-mobile;
+    }
+
+    & h2 {
+      width: 30%;
+      margin: 0;
+      color: white;
+      text-align: center;
+      @include from($x-large) {
+        width: 100%;
+      }
+    }
+
+    .cardsContainer {
+      height: 100%;
+      width: 70%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 20px 0;
+      @include from($x-large) {
+        padding: 0;
+        width: 100%;
+        flex-wrap: wrap;
+      }
+
+      .imageContainer {
+        border-radius: 10px;
+        margin: 0;
+        background: rgb(80, 77, 77);
+        height: 100px;
+        width: 100px;
+        cursor: pointer;
+        @include from($x-large) {
+          display: flex;
+          justify-content: center;
+          margin: 20px 0;
+          width: 35%;
+          background: transparent;
+        }
+
+        :hover {
+          opacity: 1;
+          background: white;
+          border-radius: 10px;
+          -webkit-box-shadow: 0px 0px 36px -1px rgba(255, 255, 255, 255);
+          -moz-box-shadow: 0px 0px 36px -1px rgba(255, 255, 255, 255);
+          box-shadow: 0px 0px 36px -1px rgba(255, 255, 255, 255);
+        }
+
+        img {
+          border-radius: 10px;
+          opacity: 0.5;
+          background: black;
+          min-height: 100%;
+          margin: 0;
+          @include from($x-large) {
+            max-width: 110px;
+            max-height: 110px;
+          }
+        }
+
+        &.active {
+          img {
+            opacity: 1;
+            background: white;
+            border-radius: 10px;
+            -webkit-box-shadow: 0px 0px 36px -1px rgba(255, 255, 255, 255);
+            -moz-box-shadow: 0px 0px 36px -1px rgba(255, 255, 255, 255);
+            box-shadow: 0px 0px 36px -1px rgba(255, 255, 255, 255);
+          }
+        }
+      }
+    }
+  }
+}

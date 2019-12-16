@@ -1,0 +1,42 @@
+@import '../../shared/variables.scss';
+@import '../../shared/mixins.scss';
+
+header {
+  margin-top: $margin-section;
+  height: 70px;
+  
+  div {
+    height: 100%;
+    width: $section-width;
+    max-width: $max-section-width;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-left: 5%;
+    background: $elements-colors;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+
+    @include from($x-large){
+      padding-left: 0;
+      justify-content: center;
+      width: $section-width-mobile;
+    }
+    
+    figure {
+      max-width: 60px;
+      max-height: 60px;
+      margin: 0;
+      margin-right: 10px;
+    }
+
+    h1 {
+      color: white;
+      margin: 0;
+      @include from($x-large){
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
