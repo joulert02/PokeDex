@@ -2,7 +2,7 @@ import React from "react"
 import "./footer.scss"
 
 const Footer = props => {
-  const { cardsContent, PokemonActive } = props
+  const { cardsContent, PokemonActive, setMainPokemon } = props
 
   const Pokemons = cardsContent.sort((a, b) => {
     return a.pokemonNumber - b.pokemonNumber
@@ -23,7 +23,7 @@ const Footer = props => {
                   : "imageContainer"
               }
               onClick={(e) => {
-                props.setMainPokemon(Pokemon.pokemonNumber)
+                setMainPokemon(Pokemon.pokemonNumber)
                 e.preventDefault();
               }}
             >
